@@ -1,0 +1,24 @@
+	<!-- spruce this up a bit, give it a border at the very least. dig through movie history code, I think Ahmed made a better login than this one -->
+
+	<div class="container" style="margin-top: 100px">
+	<div class="row">
+		<div class="col m3 s1"><p></p></div>
+		<div class="col m6 s10">
+			<div class="login-logo">
+				<img src="images/logo.png" alt="">
+			</div>
+			<div>
+				<div>
+					<label for="username">Username:</label>
+					<input type="email" name="username" ng-model="account.email">
+				</div>
+				<div>
+					<label for="password">Password:</label>
+					<input type="password" name="password" ng-model="account.password">
+				</div>
+				<button id="login" ng-click="login(user)">Log In</button>
+				<button id="register" ng-click="register(user)">Register</button>
+			</div>
+		</div>
+	</div>
+</div>

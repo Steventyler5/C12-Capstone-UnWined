@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="lib/bower_components/Materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body ng-app="UnwinedApp">
+ <nav class="navbar" style="margin-top: 5px">
+    <div class="nav-wrapper">
+      <a href="#/landing"><img src="images/logo.png" alt="" width="200px"></a>
+      <ul id="nav-mobile" class="right nav-links">
+        <li><a href="#/search-new">Find Bars</a></li>
+        <!-- Go get the logout function from music/movie history and add it to app.js, might have to change ng-click to onclick, who the hell knows -->
+        <li><a href="#/login" ng-click="logout()">Logout</a></li>
+      </ul>     
+    </div>
+  </nav>
+
+
+<!-- <div class="nav-container"> -->
+<!-- 	<nav class="navbar navbar-default">
+	  <div class="navbar-fixed">
+		    <div class="top-nav nav-wrapper">
+		      <form>
+		        <div class="left input-field">
+
+		          <input type="search" ng-submit="search()" placeholder="Search for a movie..." ng-model="movieToSearch" id="search" required>
+		          <label for="search"><img src="images/logo.png" alt="" width="200px"></label>
+		          <i class="material-icons">close</i>
+		        </div>
+		      </form>
+			    <ul class="right">
+			   		<li>
+		      			<a href="#/login">
+		        			<span ngShow="!isAuthenticated()">Login / Register</span>
+		      			</a>
+		      			<a href="#/welcome" ng-click="logout()">
+		        			<span ngHide="isAuthenticated()">Logout</span>
+		      			</a>
+		    		</li>
+		    	</ul>
+		    </div>
+	  </div>
+	</nav> -->
+<!-- </div> -->
+
+
+
+  <div ng-view id="theView"></div>
+	<!-- <div id="map"></div> -->
+<!-- Replace the value of the key parameter with your own API key. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7qNY3yqZQ1_r-_rf9ya8DoqArzbz2Vb0	
+&libraries=places&callback=initMap" async defer></script>
+<script src="lib/bower_components/angular/angular.min.js"></script>
+<script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="lib/bower_components/angular-route/angular-route.min.js"></script>
+<script src="lib/bower_components/firebase/firebase.js"></script>
+<script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
+<script src="lib/bower_components/Materialize/dist/js/materialize.min.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/factories/AuthFactory.js"></script>
+<script src="app/factories/AddNewFactory.js"></script>
+<script src="app/factories/InitMapFactory.js"></script>
+<script src="app/factories/StoredPlaceFactory.js"></script>
+<script src="app/factories/CreateMarkersFactory.js"></script>
+<script src="app/factories/NearbySearchFactory.js"></script>
+
+<script src="app/controllers/LoginCtrl.js"></script>
+<script src="app/controllers/LandingCtrl.js"></script>
+<script src="app/controllers/SearchCtrl.js"></script>
+
+</body>
+</html>
