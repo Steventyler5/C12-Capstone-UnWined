@@ -23,12 +23,13 @@ Unwined.controller("SearchCtrl", [
 
 		$scope.reloadMap = function() {
 			// searchRadius = $scope.newRadius;
-			window.nss.lat = parseFloat($scope.latitude);
-			window.nss.lng = parseFloat($scope.longitude);
+			// window.nss.lat = parseFloat($scope.latitude);
+			// window.nss.lng = parseFloat($scope.longitude);
 			// $scope.newLocation = {};
 			// initMap($scope.newLocation, $scope.newRadius)
-			initMap();
-			$timeout(setNearbyMarkers, 500, false);
+			geocodeAddress(geocoder, map);
+			// initMap();
+			$timeout(setNearbyMarkers, 1000, false);
 		}
 	}
 ]);

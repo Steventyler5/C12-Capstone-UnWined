@@ -52,6 +52,7 @@ Unwined.run([
   //Review these variables, no way all of them are actually being used now
 
 var map;
+var geocoder;
 var infowindow;
 var nss = {lat: 36.132796, lng: -86.756568};
 var barsObject = {};
@@ -59,6 +60,9 @@ var barIds = [];
 var searchRadius = 2500;
 var storedPlaces = {};
 var barArray = [];
+var defaultBounds;
+var input;
+var searchBox;
 
   //Google gets all mad when you put its shit outside of global scope. As in, like, the whole thing breaks. Gotta leave a lot of the stuff that deals directly with the map in here for a while until I come up with a workaround.
 
@@ -71,8 +75,18 @@ function initMap() {
     zoom: 13
   });
 
-  
+  geocoder = new google.maps.Geocoder();
   infowindow = new google.maps.InfoWindow();
+
+  defaultBounds = new google.maps.LatLngBounds(
+  new google.maps.LatLng(36.132796, -86.756568),
+  new google.maps.LatLng(36.122796, -86.746568));
+
+  input = document.getElementById('new-address');
+
+  searchBox = new google.maps.places.SearchBox(input, {
+    bounds: defaultBounds
+  });
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: nss,
@@ -80,6 +94,22 @@ function initMap() {
     type: ['bar']
   }, callback);
 }
+
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById('new-address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      console.log(nss);
+      nss.lat = results[0].geometry.location.lat();
+      nss.lng = results[0].geometry.location.lng();
+      console.log(nss);
+      initMap();
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
 
 function callback(results, status) {
 	console.log(results)

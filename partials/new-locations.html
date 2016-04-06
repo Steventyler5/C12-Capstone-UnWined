@@ -5,8 +5,10 @@
 <div class="container">
 	<div class="row">
 		<div id="search-criteria" style="margin-top: 50px" class="col m3">
-			<input id="latitude" type="text" style="width: 250px" ng-model="latitude"><br>
-			<input id="longitude" type="text" style="width: 250px" ng-model="longitude"><br>
+			<input type="text" id="new-address" style="width: 250px">
+			<button ng-click="reloadMap()">Search</button>
+			<!-- <input id="latitude" type="text" style="width: 250px" ng-model="latitude"><br> -->
+			<!-- <input id="longitude" type="text" style="width: 250px" ng-model="longitude"><br> -->
 			<!-- <select name="radius" id="radius" style="display: block; width: 200px"ng-model="newRadius">
 				<option value="1000">1000 Meters</option>
 				<option value="1500">1500 Meters</option>
@@ -14,7 +16,7 @@
 				<option value="2500" selected>2500 Meters</option>
 				<option value="3000">3000 Meters</option>
 			</select> -->
-			<button id="reload-map" ng-click="reloadMap()">Search</button>	
+			<!-- <button id="reload-map" ng-click="reloadMap()">Search</button>	 -->
 			<!-- <button id="reload-markers" ng-click="reloadMarkers()">Reload Markers</button>	 -->
 		</div>
 		<div id="map" class="col m5 offset-m1	"></div>

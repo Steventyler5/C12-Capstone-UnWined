@@ -9,12 +9,17 @@
 			<p ng-if="sideInfo.name === ''" class="instructions">Click on a bar's icon to view some basic information, then click the "More Details" button to see, you guessed it, more details about the selected bar. Go you!</p>
 			<p ng-if="sideInfo.name === ''" class="instructions">Don't see your favorite bar on the map? Click the Find Bars link and search for it! Once you've found it, click its marker and then the "Has Specials" button in the Info Window, then come back here to add some specials!</p>
 			<h5 ng-if="sideInfo.name === ''">Happy Drinking!</h5>
-			<img ng-if="sideInfo.photo !== 'none'" ng-src="{{ sideInfo.photo }}" width="90px">
-			<button ng-if="sideInfo.photo === 'none'" ng-click="addPhoto()">Add Photo</button>
+			<img ng-if="sideInfo.photo !== 'none'" ng-src="{{ sideInfo.photo }}" width="200px">
+			<div ng-if="sideInfo.photo === 'none'">
+				<input type="text" id="photoURLInput" placeholder="Image URL">
+				<button ng-click="addPhoto('{{ sideInfo.key }}')">Add Photo</button>
+			</div>
 			<h4 ngif="sideInfo.name !== ''">{{ sideInfo.name }}</h4>
 			<h5>{{ sideInfo.address }}</h5>
-			<p ng-if="sideInfo.specials !== ''">Specials: {{ sideInfo.specials }}</p>
-			<button id="edit-specials" ng-if="sideInfo.name !== ''">Edit Specials</button>
+			<p ng-if="sideInfo.specials !== ''" id="specials-el" ng-class="specialsClass">Specials: {{ sideInfo.specials }}</p>
+			<input id='new-specials' type="text" class="" ng-model="newString" ng-if="sideInfo.name !== ''" ng-class="specialsInputClass">
+			<button id="special-submit" class="" ng-if="sideInfo.name !== ''" ng-click="submitSpecials()" ng-class="specialsSubmitClass">Submit</button>
+			<button id="edit-specials" ng-if="sideInfo.name !== ''" ng-click="editSpecials('{{ sideInfo.key }}')" ng-class="editSpecialsClass">Edit Specials</button>
 		</div>
 		<div class="col l7 offset-l1">
 			<div id="map"></div>

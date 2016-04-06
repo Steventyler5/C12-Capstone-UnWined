@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>UnWined</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="lib/bower_components/Materialize/dist/css/materialize.min.css"  media="screen,projection"/>
 	<link rel="stylesheet" href="styles/styles.css">
@@ -10,7 +10,7 @@
 <body ng-app="UnwinedApp">
  <nav class="navbar" style="margin-top: 5px">
     <div class="nav-wrapper">
-      <a href="#/landing"><img src="images/logo.png" alt="" width="200px"></a>
+      <a href="#/landing" onclick="nss = {lat: 36.132796, lng: -86.756568}"><img src="images/logo.png" alt="" width="200px"></a>
       <ul id="nav-mobile" class="right nav-links">
         <li><a href="#/search-new">Find Bars</a></li>
         <!-- Go get the logout function from music/movie history and add it to app.js, might have to change ng-click to onclick, who the hell knows -->
@@ -68,6 +68,8 @@
 <script src="app/factories/StoredPlaceFactory.js"></script>
 <script src="app/factories/CreateMarkersFactory.js"></script>
 <script src="app/factories/NearbySearchFactory.js"></script>
+<script src="app/factories/UpdatePhotoFactory.js"></script>
+<script src="app/factories/UpdateSpecialsFactory.js"></script>
 
 <script src="app/controllers/LoginCtrl.js"></script>
 <script src="app/controllers/LandingCtrl.js"></script>

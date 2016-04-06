@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color:  #E5E6D8;
 }
 
 #map {
@@ -23,12 +24,13 @@ input.address-input {
 }
 
 #location-details {
-	background-color: lightblue;
+	background-color: #E4D5A3 ;
 	height: 500px;
 	overflow: scroll;
 	border-radius: 10px;
 	box-shadow: -5px 5px 20px lightslategrey;
 	padding-top: 20px;
+
 }
 
 .container {
@@ -42,4 +44,20 @@ input.address-input {
 
 .nav-links li {
 	margin-right: 50px;
+}
+
+.navbar {
+	background-color: #367854;
+}
+
+.hidden {
+	display: none;
+}
+
+.login-panel {
+	background-color: #E4D5A3;
+	border-radius: 10px;
+	box-shadow: 5px 5px 20px lightslategrey;
+	color: #367854;
+	font-weight: bold;
 }
