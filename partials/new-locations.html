@@ -1,0 +1,24 @@
+<!-- Feel free to get rid of that select menu whenever you want, it's not like you're gonna add dynamic ranges back into the search function, rsults are limited to 20 objects anyway -->
+
+<!-- You can also freely delete that second button and it's coresponding funciton in the controller since you actually did a thing. Unless the internet is so slow that you need to manually reload the markers after the map loads......Oh, make it an anchor and make it's color match the background so you can sneakily troubleshoot mid presentation. You clever cheater :+1: -->
+
+<div class="container">
+	<div class="row">
+		<div id="search-criteria" style="margin-top: 50px" class="col m3">
+			<input type="text" id="new-address" style="width: 250px">
+			<button ng-click="reloadMap()">Search</button>
+			<!-- <input id="latitude" type="text" style="width: 250px" ng-model="latitude"><br> -->
+			<!-- <input id="longitude" type="text" style="width: 250px" ng-model="longitude"><br> -->
+			<!-- <select name="radius" id="radius" style="display: block; width: 200px"ng-model="newRadius">
+				<option value="1000">1000 Meters</option>
+				<option value="1500">1500 Meters</option>
+				<option value="2000">2000 Meters</option>
+				<option value="2500" selected>2500 Meters</option>
+				<option value="3000">3000 Meters</option>
+			</select> -->
+			<!-- <button id="reload-map" ng-click="reloadMap()">Search</button>	 -->
+			<!-- <button id="reload-markers" ng-click="reloadMarkers()">Reload Markers</button>	 -->
+		</div>
+		<div id="map" class="col m5 offset-m1	"></div>
+	</div>	
+</div>

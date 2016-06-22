@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color:  #E5E6D8;
+}
+
+#map {
+	left: 0;
+	top: 10px;
+  height: 400px;
+  width: 550px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px lightslategrey;
+}
+
+.login-logo {
+	text-align: center
+}
+
+input.address-input {
+	width: 250px;
+}
+
+#location-details {
+	background-color: #E4D5A3 ;
+	height: 500px;
+	overflow: scroll;
+	border-radius: 10px;
+	box-shadow: -5px 5px 20px lightslategrey;
+	padding-top: 20px;
+
+}
+
+.container {
+	width: 90%;
+	margin-top: 100px
+}
+
+.nav-links {
+	margin-right: 200px;
+}
+
+.nav-links li {
+	margin-right: 50px;
+}
+
+.navbar {
+	background-color: #367854;
+}
+
+.hidden {
+	display: none;
+}
+
+.login-panel {
+	background-color: #E4D5A3;
+	border-radius: 10px;
+	box-shadow: 5px 5px 20px lightslategrey;
+	color: #367854;
+	font-weight: bold;
+}
