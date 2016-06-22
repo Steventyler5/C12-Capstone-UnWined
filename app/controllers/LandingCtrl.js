@@ -82,7 +82,7 @@ Unwined.controller("LandingCtrl",
       $scope.specialsSubmitClass.push('hidden');
       $scope.specialsClass.pop('hidden');
       $scope.editSpecialsClass.pop('hidden');
-      // $scope.LoadPlaces();
+      $scope.LoadPlaces();
       infowindow.setContent(`<h5>${$scope.sideInfo.name}</h5><h6>${$scope.sideInfo.address}</h6><p>Specials: ${$scope.sideInfo.specials}</p><button  onclick="showDetails('${$scope.sideInfo.key}')">More Details</button>`);
       // infowindow.close();
 
